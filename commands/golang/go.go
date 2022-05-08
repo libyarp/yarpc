@@ -52,8 +52,11 @@ func serverMethodArguments(m *idl.Method, resolver func(n string) string) string
 
 func serverMethodReturnValues(m *idl.Method, resolver func(n string) string) string {
 	var fields []string
-	if !m.ReturnStreaming && m.ReturnType != "void" {
-		fields = append(fields, "yarp.Header", "*"+resolver(m.ReturnType))
+	if !m.ReturnStreaming {
+		fields = append(fields, "yarp.Header")
+		if m.ReturnType != "void" {
+			fields = append(fields, "*"+resolver(m.ReturnType))
+		}
 	}
 	return "(" + strings.Join(append(fields, "error"), ",") + ")"
 }
