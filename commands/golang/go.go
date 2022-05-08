@@ -235,7 +235,12 @@ var Action = cli.Command{
 					b.Printfln("}()")
 					b.Printfln("return ch, headers, nil")
 				} else {
-					b.Printf("res, headers, err := cli.c.DoRequest(ctx, request")
+					if returnsVoid {
+						b.Printf("_")
+					} else {
+						b.Printf("res")
+					}
+					b.Printf(", headers, err := cli.c.DoRequest(ctx, request")
 					if acceptsVoid {
 						b.Printf(", nil")
 					} else {
