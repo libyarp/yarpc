@@ -6,7 +6,7 @@ require github.com/urfave/cli v1.22.8
 
 require (
 	github.com/OneOfOne/xxhash v1.2.8
-	github.com/libyarp/idl v0.0.1
+	github.com/libyarp/idl v0.0.2
 )
 
 require (

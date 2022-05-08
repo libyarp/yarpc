@@ -11,7 +11,7 @@ compiling it manually.
 After installing Go, run:
 
 ```
-go install github.com/libyarp/yarpc@latest
+go install github.com/libyarp/yarpc/cmd/yarpc@latest
 ```
 
 ## Usage
