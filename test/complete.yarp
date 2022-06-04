@@ -1,0 +1,32 @@
+package io.vito.yarp;
+
+message ToBeNested {
+    a uint8  = 0;
+    b uint16 = 1;
+}
+
+message AllTypes {
+    a uint8               = 0;
+    b uint16              = 1;
+    c uint32              = 2;
+    d uint64              = 3;
+    e int8                = 4;
+    f int16               = 5;
+    g int32               = 6;
+    h int64               = 7;
+    i bool                = 8;
+    j float32             = 9;
+    k float64             = 10;
+    @repeated l string    = 11;
+    m map<string, string> = 12;
+    oneof {
+        n uint64 = 0;
+        o string = 1;
+        p bool   = 2;
+    }                     = 13;
+    @optional q string    = 14;
+    r ToBeNested = 15;
+    @optional s ToBeNested = 16;
+    @repeated t ToBeNested = 17;
+    u map<string, array<uint8>> = 18;
+}
