@@ -100,6 +100,13 @@ var Action = cli.Command{
 			files = append(files, msg)
 		}
 
+		for _, s := range set.Services {
+			name := common.Titleize(s.Name)
+			msg := common.NewBuilder()
+
+			msg.Printfln("class %sClient < ")
+		}
+
 		if c.Bool("single-file") {
 			f, err := os.OpenFile(c.String("out"), os.O_CREATE|os.O_RDWR|os.O_TRUNC, 0655)
 			if err != nil {
